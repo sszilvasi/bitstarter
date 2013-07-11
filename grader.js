@@ -61,15 +61,19 @@ References:
     {
       var processUrl = function(result, response)
       {
-        $ = cheerio.load(response);
-        var checks = loadChecks(checksfile).sort();
-        var out = {};
-        for(var ii in checks) {
-          var present = $(checks[ii]).length > 0;
-          out[checks[ii]] = present;
+        if (result instanceof Error) {
+            console.error('Error: ' + util.format(response.message));
+        } else {
+          $ = cheerio.load(result);
+          var checks = loadChecks(checksfile).sort();
+          var out = {};
+          for(var ii in checks) {
+            var present = $(checks[ii]).length > 0;
+            out[checks[ii]] = present;
+          }
+          var outJson = JSON.stringify(out, null, 4);
+          console.log(outJson);
         }
-        var outJson = JSON.stringify(out, null, 4);
-        console.log(outJson);
       }
       return processUrl;
     }
