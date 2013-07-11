@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type='text/javascript' id='lt_ws' src='http://localhost:50301/socket.io/lighttable/ws.js'></script>
     <meta charset="utf-8">
     <title>My First Bitstarter</title>
     <link type="text/css" rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
@@ -11,7 +10,7 @@
         padding-bottom: 40px;
     }
     .container {
-        width = 960px;
+        width: 960px;
     }
     p.lead {
         padding-top: 15px;
@@ -20,13 +19,13 @@
         padding: 10px 0px 10px 0px;
     }
     .video, .thermometer, .order, .social {
-        border: 1px dotter;
+        border: 1px dotted;
         text-align: center;
     }
     .video {
         /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
-        height: 40px;
-        line-height: 40px;
+        height: 124px;
+        line-height: 124px;
     }
     .thermometer, .order, .social {
         height: 40px;
@@ -41,7 +40,7 @@
 <body>
     <div class="container">
         <div class="row navigation">
-            <div class="span2logo">
+            <div class="span2 logo">
                 Logo
             </div>
             <div class="span6 blank">
@@ -51,12 +50,12 @@
                 About
             </div>
         </div>
-        <div class="raw heading">
+        <div class="row heading">
             <div class="span12">
                 <h1>Bitstarter Title</h1>
             </div>
         </div>
-        <div class="raw subheading">
+        <div class="row subheading">
             <div class="span12">
                 <p class="lead">This is my first bitstarter project.</p>
             </div>
