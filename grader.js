@@ -25,6 +25,7 @@ References:
    var program = require('commander');
    var cheerio = require('cheerio');
    var rest = require('restler');
+   var util = require('util');
    var URL_DEFAULT = "http://sheltered-temple-6061.herokuapp.com/";
    var HTMLFILE_DEFAULT = "index.html";
    var CHECKSFILE_DEFAULT = "checks.json";
@@ -59,10 +60,10 @@ References:
 
     var buildFn = function(checksfile)
     {
-      var processUrl = function(result, response)
+      var processUrl = function(result)
       {
         if (result instanceof Error) {
-            console.error('Error: ' + util.format(response.message));
+            console.error('Error: ' + util.format(result.message));
         } else {
           $ = cheerio.load(result);
           var checks = loadChecks(checksfile).sort();
